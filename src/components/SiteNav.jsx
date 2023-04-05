@@ -57,9 +57,18 @@ const SiteNav = (props) => {
             <ul className="nav">
               <li className="nav-item">
                 <Link className="nav-link link-secondary" to="/">
-                  <button type="button" className="DocSearch DocSearch-Button" aria-label="Search">
-                    <i className="fa-solid fa-magnifying-glass"></i>
-                  </button>
+                  <div className="input-group mb-3">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder={props.searchPlaceHolder}
+                      aria-label="Recipient's username"
+                      aria-describedby="button-addon2"
+                    />
+                    <button className="btn btn-outline-secondary" type="button" id="button-addon2">
+                      <i className="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                  </div>
                 </Link>
               </li>
               <li className="nav-item">

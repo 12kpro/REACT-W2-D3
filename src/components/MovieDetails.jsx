@@ -6,7 +6,7 @@ const MOVIE_API_URL = "http://www.omdbapi.com/?apikey=4e47af3b&i=";
 const COMMENT_API_URL = "https://striveschool-api.herokuapp.com/api/comments/";
 const AUTH_KEY =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEzYjZhZGM1NmIzNjAwMTMzZmU1NzAiLCJpYXQiOjE2ODA1MjI2MjcsImV4cCI6MTY4MTczMjIyN30.o95uQAsLLXkKapQuegwZnOjwLwi5er5rwl3OoGIczs8";
-const MovieDetails = () => {
+const MovieDetails = (props) => {
   const params = useParams();
   //   const navigate = useNavigate();
 
@@ -19,11 +19,6 @@ const MovieDetails = () => {
   }, [params.movieId]);
 
   const fetchMovieDetail = async (type = "movie") => {
-    const commentOption = {
-      headers: {
-        Authorization: AUTH_KEY
-      }
-    };
     let url = type === "comments" ? COMMENT_API_URL : MOVIE_API_URL;
     let option =
       type === "comments"
