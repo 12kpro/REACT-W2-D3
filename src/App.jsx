@@ -29,11 +29,11 @@ function App() {
       <BrowserRouter>
         <SiteNav showLink={showLink} secondaryBar={secondaryBar} searchPlaceHolder={searchPlaceHolder} />
         <Routes>
-          <Route path="/" element={<HomeMain />} />
+          <Route path="/" element={<HomeMain setNav={updateNav} />} />
           <Route path="/tv-shows" element={<TVShows setNav={updateNav} />} />
-          <Route path="/profile" element={<ProfileMain />} />
-          <Route path="/settings" element={<SettingsMain />} />
-          <Route path="/details/:movieId/" element={<MovieDetails />} />
+          <Route path="/profile" element={<ProfileMain setNav={updateNav} />} />
+          <Route path="/settings" element={<SettingsMain setNav={updateNav} />} />
+          <Route path="/details/:movieId/" element={<MovieDetails setNav={updateNav} />} />
           <Route path="*" element={<NotFound spacings="mt-5 pt-5" />} />
         </Routes>
         <SiteFooter />

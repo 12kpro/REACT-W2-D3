@@ -16,7 +16,7 @@ const MovieDetails = (props) => {
   useEffect(() => {
     fetchMovieDetail();
     fetchMovieDetail("comments");
-  }, [params.movieId]);
+  }, []);
 
   const fetchMovieDetail = async (type = "movie") => {
     let url = type === "comments" ? COMMENT_API_URL : MOVIE_API_URL;

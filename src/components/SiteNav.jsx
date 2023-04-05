@@ -24,19 +24,26 @@ const SiteNav = (props) => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/">
+                <Link
+                  className={`nav-link link-secondary ${location.pathname === "/" ? "active" : ""}`}
+                  aria-current="page"
+                  to="/"
+                >
                   Home
                 </Link>
               </li>
               {props.showLink && (
                 <>
                   <li className="nav-item">
-                    <Link className={`nav-link ${location.pathname === "/tv-shows" ? "active" : ""}`} to="/tv-shows">
+                    <Link
+                      className={`nav-link link-secondary ${location.pathname === "/tv-shows" ? "active" : ""}`}
+                      to="/tv-shows"
+                    >
                       TV Shows
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/">
+                    <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} to="/">
                       Movies
                     </Link>
                   </li>
@@ -53,24 +60,18 @@ const SiteNav = (props) => {
                 </>
               )}
             </ul>
-
+            <form className="d-flex" role="search">
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder={props.searchPlaceHolder}
+                aria-label="Search"
+              />
+              <button className="btn btn-outline-secondary" type="submit">
+                <i className="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
             <ul className="nav">
-              <li className="nav-item">
-                <Link className="nav-link link-secondary" to="/">
-                  <div className="input-group mb-3">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder={props.searchPlaceHolder}
-                      aria-label="Recipient's username"
-                      aria-describedby="button-addon2"
-                    />
-                    <button className="btn btn-outline-secondary" type="button" id="button-addon2">
-                      <i className="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                  </div>
-                </Link>
-              </li>
               <li className="nav-item">
                 <Link className="nav-link link-secondary fw-bold" to="/">
                   KIDS

@@ -1,5 +1,5 @@
 import MoviesSlider from "./MoviesSlider";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const TVShows = (props) => {
   useEffect(() => {
