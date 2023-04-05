@@ -11,38 +11,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import MovieDetails from "./components/MovieDetails";
 import TVShows from "./components/TVShows";
-/* home page
-    <div className="text-bg-dark">
-      <SiteNav showLink={true} secondaryBar={true} />
-      <HomeMain />
-      <SiteFooter />
-    </div>
-*/
-/* Profile page
-    <div className="text-bg-dark">
-      <SiteNav />
-      <ProfileMain />
-    </div>
-*/
-/* Settings page
-    <>
-      <SiteNav showLink={true}/>
-      <SettingsMain />
-    </>
-*/
-/*
-    <div className="text-bg-dark">
-      <SiteNav showLink={true} secondaryBar={true} />
-      <HomeMain />
-      <SiteFooter />
-    </div>
-*/
-function App() {
-  /*
-  useEffect(() => {
 
-  }, [params.movieId]);
-  */
+function App() {
   return (
     <div className="text-bg-dark">
       <BrowserRouter>
